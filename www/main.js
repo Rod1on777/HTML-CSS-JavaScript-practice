@@ -39,5 +39,3 @@ const person = {                                                //Тоже об�
 };
 document.getElementById('person').innerHTML = person.name + " " + person.lastname + " " + person.age + "Full name = " + person.fullname();
 
-
-
