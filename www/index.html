@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript practice</title>
 </head>
+
 <body>
-    <noscript> Turn on JavaScript! </noscript> <!-- Информация, которая показывается при выключенном JavaScript в настроках браузера -->
+    <noscript> Turn on JavaScript! </noscript>
+    <!-- Информация, которая показывается при выключенном JavaScript в настроках браузера -->
 
     <p id="demo">123</p>
 
-    <button onclick="window.print()">Print this page</button>   <!-- Распечатать страницу на принтере -->
+    <button onclick="window.print()">Print this page</button> <!-- Распечатать страницу на принтере -->
     <br>
 
-    <button type="button" onclick="Demo1()">Write demo 1</button>   <!-- Использовать функцию Demo1() при клеке на кнопку -->
+    <button type="button" onclick="Demo1()">Write demo 1</button>
+    <!-- Использовать функцию Demo1() при клеке на кнопку -->
 
     <p id="demo1">Not demo 1</p>
+    <br>
+
+    <p>Car properties:</p>
+    <p id="car"></p>
+
+    <p>Person:</p>
+    <p id="person"></p>
+
+
+
+
+
+    <!--      Ивенты       -->
+    <!--    Выполняют функцию, если что-то происходит   -->
+
+    <button type="button" onclick="Demo1()">Write demo 1</button>
+    <!-- Ивент onclick делает действие если пользователь нажимает на элемент HTML кода -->
+
+    <!-- Частоиспользуемые ивенты:
+        onchange	    An HTML element has been changed
+        onclick	        The user clicks an HTML element
+        onmouseover	    The user moves the mouse over an HTML element
+        onmouseout	    The user moves the mouse away from an HTML element
+        onkeydown	    The user pushes a keyboard key
+        onload	        The browser has finished loading the page
+    -->
+
+
+
+
+
 
 
     <!-- тут писать код JavaScript (желательно писать в конце перед закрытием </body>)-->
     <script src="main.js"></script>
+
        
     
     <div id="target">
         1. 
     </div>
 </body>
+
 </html>
