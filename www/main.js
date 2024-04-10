@@ -11,7 +11,7 @@ console.warn('(not) warning!')  //Выод текста в формате пре
 //  ----------------------- Переменные -------------------------
 var num = 5;    //глобальная переменная
 let numb = 5;   //локальная переменная
-const con = 6;
+const con = 6;  //константа глобальная
 
 console.log(num);
 
@@ -23,4 +23,31 @@ document.getElementById("demo").innerHTML = '10';  //Берёт элемент �
 function Demo1(){                                           //Простейшай функция Demo1 (заменяет элемент с айди demo1 на Demo1)
     document.getElementById("demo1").innerHTML = "Demo1";
 }
+
+
+// Примеры из лекций
+
+// 1.
+
+var text = " bebra "
+
+
+const makeMessage = (text) => {
+    const message = '<p> Hello <em>' + text + '</em> <p>'
+    return message
+}
+
+const sayHello = (message) => {
+    const target = document.getElementById('target')
+
+    target.innerHTML = makeMessage(message)
+}
+
+window.onload = () => {
+    sayHello('World')
+}
+
+// 2.
+
+
 
