@@ -53,9 +53,9 @@ const makeMessage = (text) => {
 }
 
 const sayHello = (message) => {
-    const target = document.getElementById('target')
+    const target1 = document.getElementById('target1')
 
-    target.innerHTML = makeMessage(message)
+    target1.innerHTML = makeMessage(message)
 }
 
 window.onload = () => {
@@ -64,5 +64,113 @@ window.onload = () => {
 
 // 2.
 
+for(let i = 0; i < 3; i++){
+    console.log("looping ", i, ' times')
+}
 
+// 3.
+function sayWorld(){
+    document.getElementById('target2').innerHTML = '<p>World Hello</p>'
+}
+
+sayWorld()
+
+// 4.
+const month = [
+    {
+        name: 'Jan',
+        number: 1
+    },
+    {
+        name: 'Feb',
+        number: 2
+    },
+    {
+        name: 'Mar',
+        number: 3
+    },
+    {
+        name: 'Apr',
+        number: 4
+    },
+    {
+        name: 'May',
+        number: 5
+    }
+];
+
+
+const calendar = () => {
+    let result = '<ul>'
+    for(let i = 0; i < month.length; i++){
+        result += '<li>' + month[i].number + ' ' + month[i].name + '</li>'
+    }
+    result += '</ul>'
+    return result
+}
+
+window.onload = () => {
+    document.getElementById('target3').innerHTML = calendar()
+}
+
+// 5.
+
+let button1 = document.getElementById('b1')
+
+function b1Function(){
+    document.getElementById('b1Funcion').innerHTML = 'Button 1 pressed'
+}
+
+button1.onclick= function(){
+    b1Function()
+}
+
+//6.
+
+document.getElementById('color-change-form').onSubmit = (event) => {
+    event.preventDefault();
+    const color = form.querySelector('[name="color"]').value;
+    console.log(color);
+}
+
+
+// 7. 
+class Person{                               // Класс и конструктор класса
+    constructor(name, birthyear){
+        this.name = name;
+        this.birthyear = birthyear;
+    }
+    
+    greet() {
+        return `Hello ${this.name}`;
+    }
+
+    age() {
+        const today = new Date();
+        return today.getFullYear()-this.birthyear;
+    }
+}
+
+class Professional extends Person{          //дочерний метод класса Person
+    constructor(rank, name, birthyear){
+        super(name, birthyear);             //метод super вызывает метод родительского конструктора
+        this.rank = rank;
+    }
+
+    greet() {
+        return `Hello ${this.rank} ${this.name}`;
+    }
+}
+
+
+
+const bob = new Person('Bob Bobababoboba', 1970);
+const mary = new Person('Mary ssdfsdf', 1980);
+const rodion = new Person('Rodion Kordsf', 2004);
+const abobik = new Professional('Doctor', 'Abobik', 1023)
+
+console.log(bob.greet(), bob.age());
+console.log(mary.greet(), mary.age());
+console.log(rodion.greet(), rodion.age());
+console.log(abobik.greet(), abobik.age());
 
