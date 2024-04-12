@@ -1,37 +1,30 @@
-const things = ['eggs', 'chease', 'biscuits', 'rice'];
-const target = document.getElementById('target');
-let content = '<ul>';
-for (let index = 0; index < things.length; index++){
-    content += `<li>${things[index]}</li>`;
-}
-content += '</ul>';
-//target.innerHTML = content;
+import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
-class ThingList extends HTMLElement {       //Кастомный элемент (это класс)
+
+class ThingList extends LitElement {       //Кастомный элемент (это класс)
+
+    static styles = css`
+    p {
+        font-family: sans-serif;
+    }
+    `;
+
 
     constructor() {                         // Пустой конструктор элемента
         super();                            // хз чо
         this.color = this.getAttribute('color') || 'purple';    // присваивает этому элементу значение color, если этого значения нет, то цвет меняется на фиолетовый
-        this.things = this.getAttribute('things') || ''         // присваивает этому элементу значение things
+        const thingString = this.getAttribute('things') || ''         // присваивает этому элементу значение things
+
+        this.things = thingString.split(',');  // в переменную things записывается значие things из конструктора. Метод .split разделяет строку по каждой запятой
     }
+ 
 
-
-
-
-
-    connectedCallback() {
-        console.log('I am connected');
-
-        const things = this.things.split(',');  // в переменную things записывается значие things из конструктора. Метод .split разделяет строку по каждой запятой
-       
-        let content = '<ul>';
-        for (let index = 0; index < things.length; index++){
-            content += `<li>${things[index]}</li>`;
-        }
-        content += '</ul>';
-        this.innerHTML = content;           //запись в HTML код
-
-        this.style =`color: ${this.color}`         // добавление стиля + цвета указанного в конструкторе
+    render() {      // Возврящает html код, используя html конструктор (ниже)
+        return html`<ul>
+            ${this.things.map(thing => {
+                return html`<li>${thing}</li>`
+            })}
+        </ul>`;
     }
 }
 
