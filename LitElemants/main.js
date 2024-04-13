@@ -38,7 +38,7 @@ class CounterBlock extends LitElement{
 
     static properties = {
         start: {type:Number},                   // внешняя переменная (может быть обозначена в html)
-        _count: {type: Number, state: true}     // внутренняя переменная (исполдьзуется только внутри этого класса)
+        _count: {type: Number, state: true}     // внутренняя переменная (исполдьзуется только внутри этого класса) state: true нада писать 
     }
 
     static styles = css`
@@ -50,13 +50,14 @@ class CounterBlock extends LitElement{
     }
     `
 
-    _increment(e){
+    _increment(){
         this._count ++;
     }
 
     connectedCallback() {
-        super.connectedCallback();
+        super.connectedCallback();  // эта нада очинь сильна нада
         this._count = this.start || 0;
+        this.addEventListener('click', this._increment);
     }
 
     render() {
