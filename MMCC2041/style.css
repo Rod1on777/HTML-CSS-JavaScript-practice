@@ -1,0 +1,23 @@
+body {
+    background-color: blanchedalmond;
+}
+
+figure {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    right: 50%;
+}
+
+#drink {
+
+    width: 500px;
+    height: 400px;
+    position: absolute;
+}
+
+#caption {
+    position: absolutelef;
+
+}
